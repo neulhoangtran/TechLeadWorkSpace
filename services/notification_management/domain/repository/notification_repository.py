@@ -15,3 +15,6 @@ class NotificationRepository:
     
     async def recieve_house_success_notifications(self, topic) -> Tuple[str, Failure]:
         raise NotImplementedError()
+
+    async def recieve_user_success_notifications(self, topic) -> Tuple[str, Failure]:
+        raise NotImplementedError()

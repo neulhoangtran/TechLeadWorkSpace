@@ -20,3 +20,4 @@ async def create_user(
     if not type(new_user) is Failure:
         await send_user_to_queue.execute('user_success', new_user)
     return new_user
+    

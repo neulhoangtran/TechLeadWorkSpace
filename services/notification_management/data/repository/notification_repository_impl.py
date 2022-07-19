@@ -30,3 +30,7 @@ class NotificationRepositoryImpl(NotificationRepository):
     async def recieve_house_success_notifications(self, topic):
         result = self.messageBroker.subscribe(topic=topic)
         return result
+
+    async def recieve_user_success_notifications(self, topic):
+        result = self.messageBroker.subscribe(topic=topic)
+        return result

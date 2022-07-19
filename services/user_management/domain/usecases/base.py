@@ -1,9 +1,9 @@
 from kink import inject
 
-from ..repository.payment_repository import PaymentRepository
+from ..repository.user_repository import UserRepository
 
 
 @inject
-class BasePaymentUsecase:
-    def __init__(self, repository: PaymentRepository) -> None:
+class BaseUserUsecase:
+    def __init__(self, repository: UserRepository) -> None:
         self.repository = repository

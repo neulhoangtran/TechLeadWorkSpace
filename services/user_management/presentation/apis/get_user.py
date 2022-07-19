@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends
 
-from ...domain.usecases.get_payment_by_id import GetPayment as GetBasePaymentUsecaseImpl
+from ...domain.usecases.get_user_by_id import GetUser as GetBaseUserUsecaseImpl
 
 
-get_payment_router = APIRouter()
+get_user_router = APIRouter()
 
 
-@get_payment_router.get('/payment/{id}')
-async def get_payment_by_id(id: str, payment: GetBasePaymentUsecaseImpl = Depends(GetBasePaymentUsecaseImpl)):
-    result = await payment.execute(id)
+@get_user_router.get('/user/{id}')
+async def get_user_by_id(id: str, user: GetBaseUserUsecaseImpl = Depends(GetBaseUserUsecaseImpl)):
+    result = await user.execute(id)
     return result
