@@ -9,11 +9,8 @@ class MessageBrokerKafkaImpl(MessageBroker):
     def __init__(self) -> None:
         super().__init__()
     
-    async def send(topic, payment) -> Tuple[bool, Failure]:
-        return ProducerService.send(topic, payment, None)
-    
-    async def send_house(topic, house) -> Tuple[bool, Failure]:
-        return ProducerService.send(topic, house, None)
+    async def send(topic, service) -> Tuple[bool, Failure]:
+        return ProducerService.send(topic, service, None)
 
     async def subscribe(self, topic) -> Tuple[bool, Failure]:
         return ConsumeService.subscribe(topic)

@@ -31,4 +31,4 @@ class PaymentRepositoryImpl(PaymentRepository):
         })
     
     async def send_payment_to_queue(self, topic, payment):
-        await self.messageBroker.send(topic=topic, payment=payment)
+        await self.messageBroker.send(topic=topic, service=payment)

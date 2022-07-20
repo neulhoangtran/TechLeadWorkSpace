@@ -3,10 +3,7 @@ from core.types.failure import Failure
 
 class MessageBroker:
 
-    async def send(self, topic, payment) -> Tuple[bool, Failure]:
-        raise NotImplementedError()
-    
-    async def send_house(self, topic, house) -> Tuple[bool, Failure]:
+    async def send(self, topic, service) -> Tuple[bool, Failure]:
         raise NotImplementedError()
 
     async def subscribe(self, topics) -> Tuple[bool, Failure]:

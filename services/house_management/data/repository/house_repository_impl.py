@@ -51,4 +51,4 @@ class HouseRepositoryImpl(HouseRepository):
         })
     
     async def send_house_to_queue(self, topic, house):
-        await self.messageBroker.send_house(topic=topic, house=house)
+        await self.messageBroker.send(topic=topic, service=house)
